@@ -30,6 +30,8 @@ Route::post('password/reset', ['as' => 'password.reset.post', 'uses' => 'Auth\Re
 
 //Categories routs
 Route::resource('categories','CategoryController', ['except' => ['create']]);
+//Tags routs
+Route::resource('tags','TagController', ['except' => ['create']]);
 
 Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
 Route::get('blog', array('uses' => 'BlogController@getIndex', 'as' => 'blog.index'));
